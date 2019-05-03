@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yck</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://y-ck.github.io/"/>
+  <updated>2019-04-19T12:24:37.408Z</updated>
+  <id>http://y-ck.github.io/</id>
+  
+  <author>
+    <name>陈腾飞</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习笔记6</title>
+    <link href="http://y-ck.github.io/2017/04/10/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B006/"/>
+    <id>http://y-ck.github.io/2017/04/10/技术学习笔记06/</id>
+    <published>2017-04-10T11:01:00.000Z</published>
+    <updated>2019-04-19T12:24:37.408Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是伪元素"><a href="#什么是伪元素" class="headerlink" title="什么是伪元素"></a>什么是伪元素</h2><p>伪元素表示了某个元素的子元素。这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。</p><p>因为伪元素并不在文档树中，所以通过JS，也抓取不到伪元素，也不能给它绑事件。</p><p>语法</p><p>伪元素以::开头。</p><p>在CSS1和CSS2中，伪元素和伪类一样，都是用:开头。但在CSS3中，伪元素以::开头，用以和伪类进行区分。</p><p>IE8不支持::。因此如果要兼容IE8，只能用:。</p><h3 id="常见的伪元素"><a href="#常见的伪元素" class="headerlink" title="常见的伪元素"></a>常见的伪元素</h3><p>::before</p><p>在当前元素的内容的前面插入一个子元素。插入的元素为内联元素。</p><p>需要注意的是，使用::before时， 必须使用content来指定子元素的内容。<br>例如：</p><figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    content: &quot;Note: &quot;; /* 字符串 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.element::before &#123;</span><br><span class="line">    content: attr(title); /* 元素的title属性 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.element::before &#123;</span><br><span class="line">    content: url(path/to/image.png); /* 一个图片 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.element::before &#123;</span><br><span class="line">    content: &quot;\201C&quot;; /* Unicode转义的一个字符 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>::after</p><p>在当前元素的内容的后面插入一个子元素。<br>其他和 ::before类似。</p><p>::first-line</p><p>选择当前元素的第一行。<br>需要注意的是，其只作用于块级元素[注1]。</p><p>对::first-line只能使用下面的样式</p><figure class="highlight plain"><figcaption><span>font, font-style, font-variant, font-weight, font-size, line-height和font-family.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Background: background, background-color, background-image, background-position, background-repeat, background-size和background-attachment</span><br><span class="line">text-decoration, text-transform, letter-spacing和word-spacing**</span><br></pre></td></tr></table></figure><p>因此，对::first-line使用margin和padding是无效的。</p><p>更详细的介绍见这里。</p><p>::first-letter</p><p>选择第一个字母。<br>更详细的介绍见这里。</p><p>::selection<br><img src="http://upload-images.jianshu.io/upload_images/16777-5d6a7caef0e351c4.png" alt><br>选中当前元素中，选中的文字。</p><p>selection.png<br>对::selection的只能使用 color, background-color和text-shadow这几个属性。</p><p>什么时候用伪元素</p><p>HTML 标签的目的，就是为了展示内容信息。非内容信息要使用伪元素。</p><p>具体的使用场景是图标和清除浮动。</p><p>所谓的非内容信息，指的是一些对内容进行修饰的信息。</p><p>如下图，登录按钮左边的图标是对登录的说明，为非内容信息。</p><p><img src="http://upload-images.jianshu.io/upload_images/16777-d8da6fa57a243440.png" alt="登录按钮.png"></p><p>如下图，用红框框起来的小图标表示，点击左边的链接，会在新窗口打开。也是非内容信息。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是伪元素&quot;&gt;&lt;a href=&quot;#什么是伪元素&quot; class=&quot;headerlink&quot; title=&quot;什么是伪元素&quot;&gt;&lt;/a&gt;什么是伪元素&lt;/h2&gt;&lt;p&gt;伪元素表示了某个元素的子元素。这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中。&lt;/p&gt;
+&lt;p&gt;因为伪
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://y-ck.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Css标签" scheme="http://y-ck.github.io/tags/Css%E6%A0%87%E7%AD%BE/"/>
+    
+      <category term="伪元素" scheme="http://y-ck.github.io/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记5</title>
+    <link href="http://y-ck.github.io/2017/04/09/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B005/"/>
+    <id>http://y-ck.github.io/2017/04/09/技术学习笔记05/</id>
+    <published>2017-04-09T11:00:00.000Z</published>
+    <updated>2019-04-19T12:30:35.892Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Sublime-Text-3-快捷键精华版"><a href="#Sublime-Text-3-快捷键精华版" class="headerlink" title="Sublime Text 3 快捷键精华版"></a>Sublime Text 3 快捷键精华版</h2><p>Ctrl+Shift+P：打开命令面板<br>Ctrl+P：搜索项目中的文件<br>Ctrl+G：跳转到第几行<br>Ctrl+W：关闭当前打开文件<br>Ctrl+Shift+W：关闭所有打开文件<br>Ctrl+Shift+V：粘贴并格式化<br>Ctrl+D：选择单词，重复可增加选择下一个相同的单词<br>Ctrl+L：选择行，重复可依次增加选择下一行<br>Ctrl+Shift+L：选择多行<br>Ctrl+Shift+Enter：在当前行前插入新行<br>Ctrl+X：删除当前行<br>Ctrl+M：跳转到对应括号<br>Ctrl+U：软撤销，撤销光标位置<br>Ctrl+J：选择标签内容<br>Ctrl+F：查找内容<br>Ctrl+Shift+F：查找并替换<br>Ctrl+H：替换<br>Ctrl+R：前往 method<br>Ctrl+N：新建窗口<br>Ctrl+K+B：开关侧栏<br>Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身<br>Ctrl+F2：设置/删除标记<br>Ctrl+/：注释当前行<br>Ctrl+Shift+/：当前位置插入注释<br>Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的<br>Ctrl+Shift+A：选择当前标签前后，修改标签用的<br>F11：全屏<br>Shift+F11：全屏免打扰模式，只编辑当前文件<br>Alt+F3：选择所有相同的词<br>Alt+.：闭合标签<br>Alt+Shift+数字：分屏显示<br>Alt+数字：切换打开第N个文件<br>Shift+右键拖动：光标多不，用来更改或插入列内容<br>鼠标的前进后退键可切换Tab文件<br>按Ctrl，依次点击或选取，可需要编辑的多个位置<br>按Ctrl+Shift+上下键，可替换行</p><h2 id="选择类"><a href="#选择类" class="headerlink" title="选择类"></a>选择类</h2><p>Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。<br>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。<br>Ctrl+L 选中整行，继续操作则继续选择下一行，效果和 Shift+↓ 效果一样。<br>Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。<br>Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。<br>Ctrl+M 光标移动至括号内结束或开始的位置。<br>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。<br>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。<br>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。<br>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。<br>Ctrl+K+0 展开所有折叠代码。<br>Ctrl+← 向左单位性地移动光标，快速移动光标。<br>Ctrl+→ 向右单位性地移动光标，快速移动光标。<br>shift+↑ 向上选中多行。<br>shift+↓ 向下选中多行。<br>Shift+← 向左选中文本。<br>Shift+→ 向右选中文本。<br>Ctrl+Shift+← 向左单位性地选中文本。<br>Ctrl+Shift+→ 向右单位性地选中文本。<br>Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。<br>Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。<br>Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。<br>Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。</p><h2 id="编辑类"><a href="#编辑类" class="headerlink" title="编辑类"></a>编辑类</h2><p>Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。<br>Ctrl+Shift+D 复制光标所在整行，插入到下一行。<br>Tab 向右缩进。<br>Shift+Tab 向左缩进。<br>Ctrl+K+K 从光标处开始删除代码至行尾。<br>Ctrl+Shift+K 删除整行。<br>Ctrl+/ 注释单行。<br>Ctrl+Shift+/ 注释多行。<br>Ctrl+K+U 转换大写。<br>Ctrl+K+L 转换小写。<br>Ctrl+Z 撤销。<br>Ctrl+Y 恢复撤销。<br>Ctrl+U 软撤销，感觉和 Gtrl+Z 一样。<br>Ctrl+F2 设置书签<br>Ctrl+T 左右字母互换。<br>F6 单词检测拼写</p><h2 id="搜索类"><a href="#搜索类" class="headerlink" title="搜索类"></a>搜索类</h2><p>Ctrl+F 打开底部搜索框，查找关键字。<br>Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。<br>Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。<br>Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。<br>Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。<br>Ctrl+： 打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。<br>Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。<br>Esc 退出光标多行选择，退出搜索框，命令框等。</p><h2 id="显示类"><a href="#显示类" class="headerlink" title="显示类"></a>显示类</h2><p>Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。<br>Ctrl+PageDown 向左切换当前窗口的标签页。<br>Ctrl+PageUp 向右切换当前窗口的标签页。<br>Alt+Shift+1 窗口分屏，恢复默认1屏（非小键盘的数字）<br>Alt+Shift+2 左右分屏-2列<br>Alt+Shift+3 左右分屏-3列<br>Alt+Shift+4 左右分屏-4列<br>Alt+Shift+5 等分4屏<br>Alt+Shift+8 垂直分屏-2屏<br>Alt+Shift+9 垂直分屏-3屏<br>Ctrl+K+B 开启/关闭侧边栏。<br>F11 全屏模式<br>Shift+F11 免打扰模式</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Sublime-Text-3-快捷键精华版&quot;&gt;&lt;a href=&quot;#Sublime-Text-3-快捷键精华版&quot; class=&quot;headerlink&quot; title=&quot;Sublime Text 3 快捷键精华版&quot;&gt;&lt;/a&gt;Sublime Text 3 快捷键精华版&lt;/
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://y-ck.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="快捷键" scheme="http://y-ck.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+      <category term="前端开发工具" scheme="http://y-ck.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记3</title>
+    <link href="http://y-ck.github.io/2017/04/06/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B003/"/>
+    <id>http://y-ck.github.io/2017/04/06/技术学习笔记03/</id>
+    <published>2017-04-05T16:00:00.000Z</published>
+    <updated>2019-04-19T12:21:18.408Z</updated>
+    
+    <content type="html"><![CDATA[<p>###扁平化设计</p><blockquote><p>摘要：这段时间以来，扁平化设计一直是设计师之间的热门话题。每个人都有自己的独特认识，有的非常喜欢而有的人却恰恰相反。那什么是扁平呢？designmodo设计师Carrie Cousins在网站上介绍了扁平化的五大特点，以及“准”扁平化设计的优缺点。<br>Cousins表示他虽然对扁平化设计的感觉非常强烈，但并没有特别热爱或者特别讨厌扁平化设计。他认为好的设计不应当局限于某种设计风格，而需要更注重可用性、有用性。如果因为时尚的缘故，那就顺其自然吧。但该趋势并不适合一切项目，所以不能强求所有应用都遵从这一风格。</p></blockquote><hr><h3 id="拒绝特效"><a href="#拒绝特效" class="headerlink" title="拒绝特效"></a>拒绝特效</h3><p>顾名思义，扁平化设计仅仅采用二维元素。所有元素都不加修饰——阴影、斜面、突起、渐变这样会带来深度变化的设计都是不应该的。从图片框到按钮，再到导航栏都干脆有力，需要极力避免羽化、阴影这样的特效。现实主义、3D、拟物化更是扁平化设计的大敌。扁平化设计中的层次和其它的一一对应，但各个位面间没有交叉，不会明确区分背景图片、前景图片、按钮、文本、导航，等等。那如何做好扁平化设计？扁平化设计依赖于清晰的层次结构和元素布局，优秀的扁平化设计应该能帮助用户理解产品以及交互。现在，越来越多的网站开始应用扁平化设计，在App和移动设计中这一趋势更为明显。在小屏幕中，按钮和选项更少，也让扁平化设计如鱼得水。</p><hr><h3 id="仅使用简单的元素"><a href="#仅使用简单的元素" class="headerlink" title="仅使用简单的元素"></a>仅使用简单的元素</h3><p>扁平设计中使用到很多简单的UI元素，比如按钮和图标。设计师更常用矩形、圆形、方形等简单的形状。元素独立。正角、直角、圆弧都非常常见。UI元素应该在保持高可用性的前提下尽可能的简单，保证应用或网站直观、易用，无需引导。为了同时达到简单但直观的效果，你可以尝试为按钮填充深色，以鼓励用户点击。记住，简单的元素并不意味着设计起来很简单，恰恰相反，扁平化设计理念的复杂度可以与任何其他设计风格相提并论。</p><hr><h3 id="注重排版"><a href="#注重排版" class="headerlink" title="注重排版"></a>注重排版</h3><p>因为扁平化设计要求元素更简单，排版的重要性就更为突出了。字体的大小应该匹配整体设计，高度美化的字体会与极简设计原则相冲突。字形上可以应该使用粗体，文案要求精简、干练，最终保证产品在视觉上和措辞上的一致性。<br>字体选择上可以使用简单的无衬线字体，通过字体大小和比重来区分元素。同时你也可以使用新奇的字体作为点缀，但一定要记得不能过火。排版的目的在于帮助用户理解设计。标签按钮等其它元素更注重增强易用性和交互性。</p><hr><h3 id="关注色彩"><a href="#关注色彩" class="headerlink" title="关注色彩"></a>关注色彩</h3><p>色彩的使用对于扁平化设计来说非常重要。你可能已经发现了，扁平化设计的网站、应用色彩明显要更加鲜艳、明亮。此外扁平化设计的项目也拥有更多的色调。一般的网站很少会使用3种以上的色调，但是在扁平化设计中，平均会使用6-8种颜色。扁平化设计的色调偏通常更有活力——色彩更纯。其主要、次要颜色通常都是非常大众化的颜色，然后再配以几种其它颜色。扁平化设计的另一个趋势在于复古颜色的使用——浅澄色、紫色、绿色、蓝色——都极为流行。</p><hr><h3 id="极简主义"><a href="#极简主义" class="headerlink" title="极简主义"></a>极简主义</h3><p>扁平化设计生而简单，整体上趋近极简主义设计理念。设计中应该驱除任何无关元素，尽可能地仅使用简单的颜色与文本。如果一定需要视觉元素，你可以添加简单的图形。“准”扁平化设计最近，越来越多的设计师开始赞同准扁平化的设计。在准扁平化设计中，基调仍然是扁平风格的，但会在设计方案中添加一种，且仅添加一种特效，无论是阴影也好、梯度也好……这种设计风格比严肃的扁平化更加灵活。设计师们喜欢它，因为可以添加深度和纹理；用户喜欢它，因为它能有助于直观的交互。但反过来，也有设计师不喜欢它，因为“准”扁平风格是另两种风格的混合体，缺乏明确的定义，所以更难用好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;###扁平化设计&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;摘要：这段时间以来，扁平化设计一直是设计师之间的热门话题。每个人都有自己的独特认识，有的非常喜欢而有的人却恰恰相反。那什么是扁平呢？designmodo设计师Carrie Cousins在网站上介绍了扁平化的五大特点
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://y-ck.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="前端" scheme="http://y-ck.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="设计" scheme="http://y-ck.github.io/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="扁平化" scheme="http://y-ck.github.io/tags/%E6%89%81%E5%B9%B3%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记4</title>
+    <link href="http://y-ck.github.io/2017/04/03/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B004/"/>
+    <id>http://y-ck.github.io/2017/04/03/技术学习笔记04/</id>
+    <published>2017-04-02T16:00:00.000Z</published>
+    <updated>2019-04-19T12:24:26.875Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTML全部标签"><a href="#HTML全部标签" class="headerlink" title="HTML全部标签"></a>HTML全部标签</h1><p>文件类型 <html></html> （放在档案的开头与结尾）</p><p>文件主题 <title></title> （必须放在「文头」区块内）</p><p>文头 <head><meta name="generator" content="Hexo 3.8.0"></head> （描述性资料，像是「主题」）</p><p>文体 <body></body> （文件本体）</p><p>结构性定义（由浏览器控制的显示风格）</p><p>标题 &lt;h?&gt;&lt;/h?&gt; （从1到6，有六层选择）</p><p>3.0 标题的对齐 &lt;h? align=left|center|right&gt;&lt;/h?&gt;</p><p>3.0 区分 <div></div></p><p>3.0 区分的对齐 <div align="left|right|center|justify"></div></p><p>引文区块 <blockquote></blockquote> （通常会内缩）</p><p>强调 <em></em> （通常会以斜体显示）</p><p>特别强调 <strong></strong> （通常会以加粗显示）</p><p>引文 <cite></cite> （通常会以斜体显示）</p><p>码 <code></code> （显示原始码之用）</p><p>样本 <samp></samp></p><p>键盘输入 <kbd></kbd></p><p>变数 <var></var></p><p>定义 <dfn></dfn> （有些浏览器不提供）</p><p>地址 <address></address></p><p>3.0 大字 <big></big></p><p>3.0 小字 <small></small></p><p>与外观相关的标签（作者自订的表现方式）</p><p>加粗 <b></b></p><p>斜体 <i></i></p><p>3.0 底线 <u></u> （尚有些浏览器不提供）</p><p>3.0 删除线 <s></s> （尚有些浏览器不提供）</p><p>3.0 下标 <sub></sub></p><p>3.0 上标 <sup></sup></p><p>打字机体 <tt></tt> （用单空格字型显示）</p><p>预定格式 <pre></pre> （保留文件中空格的大小）</p><p>预定格式的宽度 <pre width="?"></pre>（以字元计算）</p><p>n1.0 向中看齐 <center></center> （文字与图片都可以）</p><p>n1.0 闪耀 <blink></blink> （有史以来最被嘲弄的标签）</p><p>n1.0 字体大小 <font size="?"></font>（从1到7）</p><p>n1.0 改变字体大小 <font size="|-?"></font></p><p>n1.0 基本字体大小 <basefont size="?"> （从1到7; 内定为3）</p><p>n2.0 字体颜色 <font color="#$$$"></font></p><p>连结与图形</p><p>链接 <a href="url"></a></p><p>链接到锚点 <a href="url#***"></a>（如果锚点在另一个档案）</p><p><a href="#***"></a> （如果锚点目前的档案）</p><p>n2.0 链接到目的视框 <a href="url" target="***"></a></p><p>设定锚点 <a name="***"></a></p><p>图形 <img src="url"></p><p>图形看齐方式 <img src="url" align="top|bottom|middle"></p><p>n1.0 图形看齐方式 &lt;img src=”url”</p><p>align=left|right|texttop|absmiddle|baseline|absbottom&gt;</p><p>取代文字 <img src="url" alt="***"> （如果没有办法显示图形则显示此文字）</p><p>点选图 <img src="url" ismap> （需要cgi程式）</p><p>n2.0 点选图 <img src="url" usemap="url"></p><p>n2.0 地图 <map name="***"></map>（描述地图）</p><p>n2.0 段落 &lt;area shape=”rect” coords=”,,,” href=”url”|nohref&gt;</p><p>3.0 大小 <img src="url" width="?" height="?">（以pixels为单位）</p><p>n1.0 图形边缘 <img src="url" border="?"> （以pixels为单位）</p><p>n1.0 图形边缘空间 <img src="url" hspace="?" vspace="?"> （以pixels为单位）</p><p>n1.0 低解析度图形 <img src="url" lowsrc="url"></p><p>n1.1 用户端拉 <meta http-equiv="refresh" content="?; url=url">（使用端自动更新 ）</p><p>n2.0 内嵌物件 &lt;emb</p><p>ed src=”url”&gt; （将物件插入页面）</p><p>n2.0 内嵌物件大小 <embed src="url" width="?" height="?"></p><p>分隔</p><p>段落 </p><p> （通常是两个return）</p><p>3.0 段落 </p><p></p> （新定义成容器型标签）<p></p><p>3.0 文字看齐方式 </p><p align="left|center|right"></p><p></p><p>换行 <br> （一个return）</p><p>n1.0 文字部份看齐方式<br clear="left|right|all">（与图形合用时）</p><p>横线 <hr></p><p>n1.0 横线对齐 <hr align="left|right|center"></p><p>n1.0 横线厚度 <hr size="?"> （以pixels为单位）</p><p>n1.0 横线宽度 <hr width="?"> （以pixels为单位）</p><p>n1.0 横线比率宽度 <hr width="%"> （以页宽为100%）</p><p>n1.0 实线 <hr noshade> （没有立体效果）</p><p>n1.0 不可换行 <nobr></nobr> （不换行）</p><p>n1.0 可换行处 <wbr> （如果需要，可在此断行）</p><p>列举 （可以巢状列举）</p><p>无次序式列举 <ul><li></li></ul> （<li> 放在每一项前）</li></p><p>n1.0 公布式列举 <ul type="disc|circle|square">（定义全部的列举项）</ul></p><p><li type="disc|circle|square">（定义这个及其後的列举项）</li></p><p>有次序式列举 <ol><li></li></ol> （<li> 放在每一项前）</li></p><p>n1.0 数标型态 <ol type="a|a|i|i|1"> （定义全部的列举项）</ol></p><p><li type="a|a|i|i|1"> （定义这个及其後的列举项）</li></p><p>n1.0 起始数字 <ol value="?"> （定义全部的列举项）</ol></p><p><li value="?"> （定义这个及其後的列举项）</li></p><p>定义式列举 <dl><dt><dd></dd></dt></dl>（<dt>项目, <dd>定义）</dd></dt></p><p>表单式列举 <menu><li></li></menu>（<li> 放在每一项前）</li></p><p>目录式列举 <dir><li></li></dir> （<li> 放在每一项前）</li></p><p>背景与颜色</p><p>3.0 重复排列的背景 <body background="url"></body></p><p>n1.1 背景颜色 <body bgcolor="#$$$"> （依序为红、绿、蓝）</body></p><p>n1.1 文字颜色 <body text="#$$$"></body></p><p>n1.1 连结颜色 <body link="#$$$"></body></p><p>n1.1 看过的连结 <body vlink="#$$$"></body></p><p>n1.1 使用中的连结 <body alink="#$$$"></body></p><p>特殊字元（以下标签需用小写）</p><p>特别符号 &amp;#?; （其中 ? 代表 iso 8859-1 的编码）</p><p>&lt; &lt; &gt; &gt; &amp; lt;&amp; gt;</p><p>注册商标tm &amp; reg;</p><p>n1.0 注册商标tm &amp; reg;</p><p>著作权符号 &amp; copy;</p><p>n1.0 著作权符号 &amp; copy;</p><p>表单 （通常需要与cgi程式配合）</p><p>定义表单 <form action="url" method="get|post"></form></p><p>n2.0 上传档案 &lt;form enctype=”multipart/form-data&gt;</p><p>输入栏位 <input type="text|password|checkbox|radio|image|hidden|submit|reset"></p><p>栏位名称 <input name="***"></p><p>栏位内定值 <input value="***"></p><p>已选定 <input checked> （适用於checkboxes与 radio boxes）</p><p>栏位宽度 <input size="?"> （以字元数为单位）</p><p>最长字数 <input maxlength="?"> （以字元数为单位）</p><p>下拉式选单 <select></select></p><p>下拉式选单名称 <select name="***"></select></p><p>选单项目数量 <select size="?"></select></p><p>多选式选单 <select multiple> （多选）</select></p><p>选项 <option></option></p><p>内定选项 <option selected></option></p><p>文字输入区 <textarea rows="?" cols="?"></textarea></p><p>输入区名称 <textarea name="***"></textarea></p><p>n2.0 输入区换行方式</p><textarea wrap="off|virtual|physical"></textarea><p>表格</p><p>3.0 定义表格 <table></table></p><p>3.0 表格框线 <table border></table> （有或没有）</p><p>n1.1 表格框线 <table border="?"></table>（可以设定数值）</p><p>n1.1 储存格左右留白 <table cellspacing="?"></table></p><p>n1.1 储存格上下留白 <table cellpadding="?"></table></p><p>n1.1 表格宽度 <table width="?"> （以pixels为单位）</table></p><p>n1.1 宽度比率 <table width="%"> （页宽为100%）</table></p><p>3.0 表格列 <tr></tr></p><p>3.0 表格列内容看齐 <tr align="left|right|center" valign="top|middle|bottom"></tr></p><p>3.0 储存格 <td></td> （须与列并用）</p><p>3.0 储存格内容看齐 <td align="left|right|center" valign="top|middle|bottom"></td></p><p>3.0 不换行 <td nowrap></td></p><p>n3.0 储存格背景颜色 <td bgcolor="#$$$"></td></p><p>3.0 储存格横向连接 <td colspan="?"></td></p><p>3.0 储存格纵向连接 <td rowspan="?"></td></p><p>n1.1 储存格宽度 <td width="?"> （以pixels为单位）</td></p><p>n1.1 储存格宽度比率 <td width="%"> （页宽为100%）</td></p><p>3.0 表格标题 <th></th> （跟<td>一样，不过会对中并加粗）</td></p><p>3.0 表格标题对齐 <th align="left|right|center" valign="top|middle|bottom"></th></p><p>3.0 表格标题不换行 <th nowrap></th></p><p>3.0 表格标题占几栏 <th colspan="?"></th></p><p>3.0 表格标题占几列 <th rowspan="?"></th></p><p>n1.1 表格标题宽度 <th width="?"> （以pixels为单位）</th></p><p>n1.1 表格标题比率宽度<th width="%"> （页宽为100%）</th></p><p>3.0 表格抬头 <caption></caption></p><p>3.0 表格抬头看齐 <caption align="top|bottom">（在表格之上/之下）</caption></p><p>视框 （定义与控制萤幕上的特定区域）</p><p>n2.0 视框格式总定义 <frameset></frameset> （取代<body>）</body></p><p>n2.0 视框行长度分配 <frameset rows=",,,"></frameset>（pixels 或 %）</p><p>n2.0 视框行长度分配 <frameset rows="*"></frameset> （* = 相对大小）</p><p>n2.0 视框栏宽度分配 <frameset cols=",,,"></frameset>（pixels 或 %）</p><p>n2.0 视框栏宽度分配 <frameset cols="*"></frameset> （* =相对大小）</p><p>n2.0 定义个别视框 <frame> （定义个别视框）</p><p>n2.0 个别视框内容 <frame src="url"></p><p>n2.0 个别视框名称 &lt;frame name=”***”|_blank|_self|_parent|_top&gt;</p><p>n2.0 边缘宽度 <frame marginwidth="?"> （「左」与「右」边界）</p><p>n2.0 边缘高度 <frame marginheight="?"> （「天顶」与「地底」边界）</p><p>n2.0 卷动条 <frame scrolling="yes|no|auto"></p><p>n2.0 不可改变大小 <frame noresize></p><p>n2.0 无视框时的内容 <noframes></noframes>（如果浏览器不提供视框功能的话）</p><p>杂项</p><p>说明 （浏览器不会显示）</p><p>档案型态声明 &lt;!doctype html public “-//ietf//dtd html 2.0//en”&gt;</p><p>3.0 档案型态声明 &lt;!doctype html public “-//w3o//dtd w3 html 3.0//en”&gt;</p><p>可搜寻 <isindex> （指示可搜寻的索引项）</p><p>n1.0 提示 <isindex prompt="***"> （要求输入的提示文字）</p><p>送出搜寻条件 <a href="url?***"></a> （其中的问号不是数字，而是「问号」）</p><p>基本档案的url <base href="url"> （必须放在「文头」区段内）</p><p>n2.0 基本视窗名称 &lt;ba</p><p>se target=”***”&gt; （必须放在「文头」区段内）</p><p>相关性 <link rev="***" rel="***" href="url"> （必须放在「文头」区段内）</p><p>背景资讯 <meta> （必须放在「文头」区段内）</p><p>====================================================</p><p>我的总结如下（按照凡是起到定义样式作用的标签都去掉的原则）：</p><p>================================================</p><p>标准允许使用的：</p><p>结构性定义：</p><p>标题 &lt;h?&gt;&lt;/h?&gt; （从1到6，有六层选择）</p><p>区分 <div></div></p><p>强调 <em></em> （通常会以斜体显示）</p><p>特别强调 <strong></strong> （通常会以加粗显示）</p><p>引文 <cite></cite> （通常会以斜体显示）</p><p>码 <code></code> （显示原始码之用）</p><p>样本 <samp></samp></p><p>键盘输入 <kbd></kbd></p><p>变数 <var></var></p><p>连结与图形</p><p>链接 <a href="url"></a></p><p>链接到锚点 <a href="url#***"></a>（如果锚点在另一个档案）</p><p><a href="#***"></a> （如果锚点目前的档案）</p><p>设定锚点 <a name="***"></a></p><p>图形 <img src="url"></p><p>分隔</p><p>段落 </p><p></p><p>列举 （可以巢状列举）</p><p>无次序式列举 <ul><li></li></ul> （<li> 放在每一项前）</li></p><p>n1.0 公布式列举 <ul type="disc|circle|square">（定义全部的列举项）</ul></p><p><li type="disc|circle|square">（定义这个及其後的列举项）</li></p><p>有次序式列举 <ol><li></li></ol> （<li> 放在每一项前）</li></p><p>n1.0 数标型态 <ol type="a|a|i|i|1"> （定义全部的列举项）</ol></p><p><li type="a|a|i|i|1"> （定义这个及其後的列举项）</li></p><p>n1.0 起始数字 <ol value="?"> （定义全部的列举项）</ol></p><p><li value="?"> （定义这个及其後的列举项）</li></p><p>定义式列举 <dl><dt><dd></dd></dt></dl>（<dt>项目, <dd>定义）</dd></dt></p><p>表单式列举 <menu><li></li></menu>（<li> 放在每一项前）</li></p><p>目录式列举 <dir><li></li></dir> （<li> 放在每一项前）</li></p><p>表单 （通常需要与cgi程式配合）</p><p>定义表单 <form action="url" method="get|post"></form></p><p>n2.0 上传档案 &lt;form enctype=”multipart/form-data&gt;</p><p>输入栏位 <input type="text|password|checkbox|radio|image|hidden|submit|reset"></p><p>栏位名称 <input name="***"></p><p>栏位内定值 <input value="***"></p><p>已选定 <input checked> （适用於checkboxes与 radio boxes）</p><p>最长字数 <input maxlength="?"> （以字元数为单位）</p><p>下拉式选单 <select></select></p><p>下拉式选单名称 <select name="***"></select></p><p>选单项目数量 <select size="?"></select></p><p>多选式选单 <select multiple> （多选）</select></p><p>选项 <option></option></p><p>内定选项 <option selected></option></p><p>文字输入区 <textarea rows="?" cols="?"></textarea></p><p>输入区名称 <textarea name="***"></textarea></p><p>n2.0 输入区换行方式 <textarea wrap="off|virtual|physical"></textarea></p><p>表格</p><p>定义表格 <table></table></p><p>表格列 <tr></tr></p><p>储存格 <td></td> （须与列并用）</p><p>3.0 表格标题 <th></th> （跟<td>一样，不过会对中并加粗）</td></p><p>3.0 表格抬头 <caption></caption></p><p>杂项</p><p>说明 （浏览器不会</p><p>显示）</p><p>档案型态声明 &lt;!doctype html public “-//ietf//dtd html 2.0//en”&gt;</p><p>3.0 档案型态声明 &lt;!doctype html public “-//w3o//dtd w3 html 3.0//en”&gt;</p><p>可搜寻 <isindex> （指示可搜寻的索引项）</p><p>n1.0 提示 <isindex prompt="***"> （要求输入的提示文字）</p><p>送出搜寻条件 <a href="url?***"></a> （其中的问号不是数字，而是「问号」）</p><p>基本档案的url <base href="url"> （必须放在「文头」区段内）</p><p>n2.0 基本视窗名称 <base target="***"> （必须放在「文头」区段内）</p><p>相关性 <link rev="***" rel="***" href="url"> （必须放在「文头」区段内）</p><p>背景资讯 <meta> （必须放在「文头」区段内）<br><code>`</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;HTML全部标签&quot;&gt;&lt;a href=&quot;#HTML全部标签&quot; class=&quot;headerlink&quot; title=&quot;HTML全部标签&quot;&gt;&lt;/a&gt;HTML全部标签&lt;/h1&gt;&lt;p&gt;文件类型 &lt;html&gt;&lt;/html&gt; （放在档案的开头与结尾）&lt;/p&gt;
+&lt;p&gt;文件主题 &lt;t
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://y-ck.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Html" scheme="http://y-ck.github.io/tags/Html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记8</title>
+    <link href="http://y-ck.github.io/2017/03/30/%E5%89%8D%E7%AB%AF%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83/"/>
+    <id>http://y-ck.github.io/2017/03/30/前端书写规范/</id>
+    <published>2017-03-29T16:00:00.000Z</published>
+    <updated>2019-04-19T12:26:12.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>前端学习三个部分：HTML，CSS，JavaScript（简称JS），因此首先明确三个概念：<br>HTML是内容层，它的目的是表示一个HTML标签在页面里是个什么角色。<br>CSS是样式层，它的目的是表示一块内容以什么样的样式（字体、大小、颜色、宽高等）显示。<br>JS是行为层，它要做的是当用户触发某些行为时，会给内容和样式带来什么样的改变。</p><p>1，HTML，CSS部分。<br>HTML/CSS初学，就照着<a href="http://www.w3cschool.cn/的实验做，把http://www.w3cschool.cn/index-6.html" target="_blank" rel="noopener">http://www.w3cschool.cn/的实验做，把http://www.w3cschool.cn/index-6.html</a> 和 <a href="http://www.w3cschool.cn/index-7.html" target="_blank" rel="noopener">http://www.w3cschool.cn/index-7.html</a> 两套做完了就入门了，</p><p>入门之后，学习CSS的精华，即布局，推荐李炎恢的教学视频，布局这一章：<a href="http://edu.51cto.com/lesson/id-14895.html" target="_blank" rel="noopener">http://edu.51cto.com/lesson/id-14895.html</a> 第27章，如果觉得不够，需要实战，则再学习接下来的28，29章。注意，这时候一定要老师讲一块代码，自己就要照着实现一次，切勿只看不做。</p><p>CSS还有一个精华部分就是命名规范，找几个著名网站（比如豆瓣、网易新闻）这类，研究它们的命名规范，我这里，有一个现成的命名规范可供学习（需要登录evernote查看）：<a href="https://www.evernote.com/shard/s168/sh/7f89cc57-cab2-4712-b61b-9fde25e3ef51/d01c8e34ef05373ec06c3b2f7cfaba82/res/e0b9963b-ba7a-441a-8462-8f87c48e4cda.jpg?resizeSmall&amp;width=832" target="_blank" rel="noopener">https://www.evernote.com/shard/s168/sh/7f89cc57-cab2-4712-b61b-9fde25e3ef51/d01c8e34ef05373ec06c3b2f7cfaba82/res/e0b9963b-ba7a-441a-8462-8f87c48e4cda.jpg?resizeSmall&amp;width=832</a> </p><p>学习完成后就是一个较为熟练的HTML/CSS使用者了.这时候如果想继续深入学习相关类库和框架，推荐Sass和Compass，推荐两篇阮一峰的博客：<a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/06/sass.html</a> <a href="http://www.ruanyifeng.com/blog/2012/11/compass.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/11/compass.html</a><br>和这本书：《Sass and Compass in Action》<a href="http://book.douban.com/subject/6732187/" target="_blank" rel="noopener">http://book.douban.com/subject/6732187/</a></p><p>2，JavaScript部分。</p><p>初学者推荐看视频：<a href="http://edu.51cto.com/course/course_id-166-page-1.html" target="_blank" rel="noopener">http://edu.51cto.com/course/course_id-166-page-1.html</a> ，特别注意JavaScript的OOP写法（重点，可多看几遍），以及闭包、原型链，异步编程部分（次重点），前者写项目都在用，后者涉及JS这个语言本质特点。</p><p>然后需要学习JS和HTML/CSS在浏览器下的调试方法，推荐用Google Chrome下的chrome developer tools调试，可以看这个视频学习： <a href="http://happycasts.net/episodes/40" target="_blank" rel="noopener">http://happycasts.net/episodes/40</a></p><p>看完视频并经过实践后，可以看《Javascript good parts》（<a href="http://book.douban.com/subject/2994925/）这本书，不必细看，看它的思想即可。用于巩固，提升JS方面的编程思想。" target="_blank" rel="noopener">http://book.douban.com/subject/2994925/）这本书，不必细看，看它的思想即可。用于巩固，提升JS方面的编程思想。</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;前端学习三个部分：HTML，CSS，JavaScript（简称JS），因此首先明确三个概念：&lt;br&gt;HTML是内容层，它的目的是表示一个HTML标签在页面里是个什么角色。&lt;br&gt;CSS是样式层，它的目的是表示一块内容以什么样的样式（字体、大小、颜色、宽高等）显示。&lt;br&gt;J
+      
+    
+    </summary>
+    
+      <category term="知识点" scheme="http://y-ck.github.io/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+    
+      <category term="Css" scheme="http://y-ck.github.io/tags/Css/"/>
+    
+      <category term="前端" scheme="http://y-ck.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记2</title>
+    <link href="http://y-ck.github.io/2017/03/30/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B002/"/>
+    <id>http://y-ck.github.io/2017/03/30/技术学习笔记02/</id>
+    <published>2017-03-29T16:00:00.000Z</published>
+    <updated>2019-04-19T12:25:20.353Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Position定位"><a href="#Position定位" class="headerlink" title="Position定位"></a>Position定位</h3><hr><p>##这个属性一共有四个值。</p><ul><li><p>static 静态定位<br> 默认布局。如果是块级元素就会在页面中自上而下的堆叠起来。如果是行内元素就会在一行内由左至右延续，如果装不下就会换行，装下了继续。</p></li><li><p>relative 相对定位<br>  使得该元素相对于他原来在文档中的位置进行定位。 通过top、left、bottom、left这四个属性值，来改变它的位置。以上还很好理解。不好理解在这里：为元素进行相对定位，会保留该元素原来占据的文档流空间。当对该元素进行相对定位时，比如top：20px;使得该元素距离距离他原来占据的空间顶部20px。也就是该元素向下移动了20px，但是除了该元素移动了一段距离，页面上其他元素并没有发生任何变化。</p></li><li><p>absolute 绝对定位<br>  绝对定位会彻底从文档流中拿出来，元素之前占据的空间也被回收啦。绝对定位元素的定位依靠其定位上下文。需要注意的是：这里写过绝对定位可以将行内元素变为块级元素的表现形式。但是确定就是一旦将行内元素进行绝对定位后，该元素的位置不好掌握，（原因：如果该元素没有设置内外边距，且前后左右也没有绝对定位元素，那么该元素会暂时停留在自己原来的位置，但是如果该元素设置了外边距，那么该元素会暂时停留在距原来位置一个外边距的距离。如果他前后左右都是设置了绝对定位的元素，那么该元素会寻找最上面一个不是绝对定位的元素下面。所以，一点那设置了绝对定位需要马上为该元素进行top、left定位。<br>  定位上下文的理解： 相对于另一个元素移动该定位元素的位置，那么“另一个元素”即为该元素的定位上下文。绝对定位元素的任何祖先元素都可以成为他的定位上下文，只需把相应的祖先元素设置为position:relative;即可。如果其祖先元素均没有设置相对定位的，那么该绝对元素的默认定位上下文为body。</p></li><li><p>fixed 固定定位<br>  绝对定位也是完全移除文档流。但是他的定位上下文为视口，即浏览器窗口。固定定位不常用，最常见的情况是，用它创建不随网页而滚动而移动的导航。 我在做练习是，最习惯的就是将父元素进行相对定位，然后对要其子元素需要定位的进行绝对定位。虽然有些网页也有父元素绝对定位，子元素相对父元素再绝对定位，我不太喜欢这样写，因为父元素的位置还需要再定位一遍。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Position定位&quot;&gt;&lt;a href=&quot;#Position定位&quot; class=&quot;headerlink&quot; title=&quot;Position定位&quot;&gt;&lt;/a&gt;Position定位&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;##这个属性一共有四个值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;sta
+      
+    
+    </summary>
+    
+      <category term="知识点" scheme="http://y-ck.github.io/categories/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+    
+      <category term="Css" scheme="http://y-ck.github.io/tags/Css/"/>
+    
+      <category term="前端" scheme="http://y-ck.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记7</title>
+    <link href="http://y-ck.github.io/2017/03/28/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%A7%E5%85%A8/"/>
+    <id>http://y-ck.github.io/2017/03/28/命令行大全/</id>
+    <published>2017-03-27T16:00:00.000Z</published>
+    <updated>2019-04-19T12:25:48.851Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="OSX-的文件系统"><a href="#OSX-的文件系统" class="headerlink" title="OSX 的文件系统"></a>OSX 的文件系统</h3><blockquote><p>OSX 采用的Unix文件系统，所有文件都挂在跟目录 / 下面，所以不在要有Windows 下的盘符概念。<br>你在桌面上看到的硬盘都挂在 /Volumes 下。<br>比如接上个叫做 USBHD的移动硬盘，桌面上会显示出一个硬盘图标，它实际在哪里呢？<br>在终端里执行 ls /Volumes/USBHD, 看看显示出的是不是这个移动硬盘的内容。<br>根目录位置是 / 核心 Mach_kernel 就在这里，<br>驱动所在位置 /Systme/Library/Extensions<br>用户文件夹位置 /User/用户名<br>桌面的位置 /User/用户名/Desktop<br>文件通配符为星号 *<br>注意：在 Unix系统中是区别大小写字符的，A.txt 不等于 a.txt。<br>根目录标志 / 不是可有可无，cd /System 表示转到跟目录下的System中，而cd System 表示转到当前目录下的 System中 </p></blockquote><p>——————————————————————————————————————————————<br>如何进入命令行操作模式 </p><blockquote><p>再图形界面下，用finder 打开 应用程序 》实用程序》终端<br>如果连图形界面都进不去了（比如安错了显示驱动），开机时按 F8，用－s参数启动，然后输入命令 mount -uw / </p></blockquote><p>获得权限 </p><blockquote><p>为了防止误操作破坏系统，再用户状态下时没有权限操作系统重要文件的，所以先要取得root权限<br>sudo －s<br>然后输入密码，输入密码时没有任何回显，连星号都没有，只管输完回车就行了。 </p></blockquote><hr><h1 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h1><p>列出文件<br>    ls 参数 目录名<br>    例: 想看看跟目录下有什么，<br>    ls /<br>    想看看驱动目录下有什么，<br>    ls /System/Library/Extensions<br>    参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件<br>转换目录<br>    cd<br>    例：想到驱动目录下溜达一圈<br>    cd /System/Library/Extensions<br>建立新目录<br>    mkdir 目录名<br>    例：在驱动目录下建一个备份目录 backup<br>    mkdir /System/Library/Extensions/backup<br>    在桌面上建一个备份目录 backup<br>    mkdir /User/用户名/Desktop/backup<br>拷贝文件<br>    cp 参数 源文件 目标文件<br>    例：想把桌面的Natit.kext 拷贝到驱动目录中<br>    cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions<br>    参数R表示对目录进行递归操作，kext在图形界面下看起来是个文件，实际上是个文件夹。<br>    把驱动目录下的所有文件备份到桌面backup<br>    cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup<br>删除文件<br>    rm 参数 文件<br>    例：想删除驱动的缓存<br>    rm -rf /System/Library/Extensions.kextcache<br>    rm -rf /System/Library/Extensions.mkext<br>    参数－rf 表示递归和强制，千万要小心使用，如果执行了 rm -rf / 你的系统就全没了 </p><p>移动文件<br>    mv 文件<br>    例：想把AppleHDA.Kext 移到桌面<br>    mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop<br>    想把AppleHDA.Kext 移到备份目录中<br>    mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/backup<br>更改文件权限<br>    chmod 参数 权限 文件<br>    例：把驱动目录下所有文件设定到root读写，其他用户只读<br>    chmod -R 755 /System/Library/Extensions<br>    参数R 表示递归，755表示各用户的权限<br>    更改文件属主<br>    chown 参数 用户:组 文件<br>    例：把驱动目录下的所有文件属主改成根用户<br>    chown -R root:wheel /System/Library/Extensions<br>    参数R 表示递归操作<br>    修复整个系统中文件的权限<br>    diskutil repairpermissions /<br>    严格的说这不是一个unix 命令，而是osx一个软件，记得修改或添加的驱动就执行一次。<br>文本编辑<br>    nano 文件名<br>    例：编辑natit Info.plist<br>    nano /System/Library/Extensions/Natit.kext/Info.plist<br>    编辑完成后 用 Ctrl ＋O 存盘，Ctrl＋X 退出<br>    另一个文本编辑软件是 vi，操作有些古怪，熟了是非常好用的，而且在所有类Unix系统中都它，走遍天下都不怕了。<br>    运行脚本命令<br>    sh 脚本文件名<br>    例 修改驱动后所有需要的操作存成一个脚本，以后修改了驱动后只要运行一次这个脚本就可以了，方便吧<br>    终端中运行nano /clean<br>    把下列代码粘贴到 nano 中<br>    rm -rf /System/Library/Extensions.kextcache<br>    rm -rf /System/Library/Extensions.mkext<br>    chown -R root:wheel /System/Library/Extensions<br>    chmod -R 755 /System/Library/Extensions<br>    diskutil repairpermissions /<br>    kextcache -k /System/Library/Extensions/<br>    Ctrl ＋O 存盘，Ctrl＋X 退出<br>    以后只要动了驱动，就在终端中运行一次 sh /clean<br>———————————————————————————————————— </p><h1 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h1><p>用 Tab 键自动补齐命令<br>比如想到 /System 目录中去，输入 cd /Sy 然后按一下Tab 键，命令就会自动补齐成 cd /System<br>操作带名字中带有空格的文件和目录<br>空格在命令中写成 空格， 比如要进入 My Documents，命令为 cd My Documents<br>查看命令的详细帮助<br>man 命令名<br>比如要看看 ls 命令的详细用法，执行 man ls<br>————————————————————————————————————<br>典型操作流程<br>(假设已经制作好清理脚本，记得每次操作前 sudo -s 获得系统权限)<br>假设下载了一个显卡驱动 Natit.zip，在桌面解压得到了一个Natit.kext，该怎么做呢？<br>为了保险起见，先把所有驱动备份了再说<br>mkdir /User/用户名/Desktop/backup 在桌面上建立备份文件夹<br>cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup 备份驱动文件<br>现在可以安心安装了<br>cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions 把它 拷贝到系统驱动目录位置<br>sh /clean 执行清理脚本，操作完成<br>重新开机失败，进不去桌面了，发现不应该安这个驱动，怎么恢复呢？<br>开机按F8，用 -s 参数启动<br>执行 mount -uw /<br>rm -rf /User/用户名/Desktop/Natit.kext 删除这个驱动<br>sh /clean 执行清理脚本，操作完成<br>重启，回到原先状态了，不死心啊，没有特效怎么行呢，又听说需要修改 Natit的 Info. plist 文件才行，好，再来<br>cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions 把它 拷贝到系统驱动目录位置<br>nano /System/Library/Extensions/Natit.kext/Info.plist<br>编辑完成后 用 Ctrl ＋O 存盘，Ctrl＋X 退出<br>sh /clean 执行清理脚本，操作完成<br>重启，这回对了，显卡特效都有了，该弄声卡了，天知道会出什么事，得把现有成果保护好。<br>mkdir /User/用户名/Desktop/gooddrivers 专为有效驱动建个目录<br>cp -R /System/Library/Extensions/Natit.kext /User/用户名/Desktop/gooddrivers 备份<br>这个声卡要求把 AppleHDA.kext 删除和编辑 AppleAzaliaAudio.kext中的Info.plist 文件，谁知道以后会不会还用AppleHDA呢，不如暂时禁用吧。<br>mkdir /System/Library/Extensions/disabled 建立个禁用目录<br>mv /System/Library/Extensions/AppleHDA.kext /System/Library/Extensions/disabled 移动过去<br>nano /System/Library/Extensions/Natit.kext/AppleAzaliaAudio.kext/Info.plist<br>编辑完成后 用 Ctrl ＋O 存盘，Ctrl＋X 退出<br>sh /clean 执行清理脚本，操作完成<br>成功了，也把修改好的驱动备份一下把<br>复制内容到剪贴板代码: </p><h1 id="以下是unix的命令行-供参考"><a href="#以下是unix的命令行-供参考" class="headerlink" title="以下是unix的命令行,供参考"></a>以下是unix的命令行,供参考</h1><table><thead><tr><th style="text-align:center">命令名</th><th style="text-align:center">功能描述</th><th style="text-align:center">使用举例</th></tr></thead><tbody><tr><td style="text-align:center">Mkdir</td><td style="text-align:center">创建一个目录</td><td style="text-align:center">mkdir dirname</td></tr></tbody></table><p>mkdir dirname<br>rmdir<br>删除一个目录 </p><p>rmdir dirname<br>mvdir<br>移动或重命名一个目录<br>mvdir dir1 dir2 </p><p>cd<br>改变当前目录<br>cd dirname </p><p>pwd<br>显示当前目录的路径名<br>pwd </p><p>ls<br>显示当前目录的内容<br>ls -la </p><p>dircmp<br>比较两个目录的内容<br>dircmp dir1 dir2 </p><p>cat<br>显示或连接文件<br>cat filename </p><p>pg<br>分页格式化显示文件内容<br>pg filename </p><p>more<br>分屏显示文件内容<br>more filename</p><p>od<br>显示非文本文件的内容<br>od -c filename </p><p>cp<br>复制文件或目录<br>cp file1 file2 </p><p>rm<br>删除文件或目录<br>rm filename </p><p>mv<br>改变文件名或所在目录<br>mv file1 file2 </p><p>ln<br>联接文件<br>ln -s file1 file2 </p><p>find<br>使用匹配表达式查找文件<br>find . -name “*.c” -print </p><p>file<br>显示文件类型<br>file filename </p><p>head<br>显示文件的最初几行<br>head -20 filename </p><p>tail<br>显示文件的最后几行<br>tail -15 filename </p><p>cut<br>显示文件每行中的某些域<br>cut -f1,7 -d: /etc/passwd </p><p>colrm<br>从标准输入中删除若干列<br>colrm 8 20 file2 </p><p>paste<br>横向连接文件<br>paste file1 file2 </p><p>diff<br>比较并显示两个文件的差异<br>diff file1 file2 </p><p>sed<br>非交互方式流编辑器<br>sed “s/red/green/g” filename </p><p>grep<br>在文件中按模式查找<br>grep “^[a-zA-Z]” filename </p><p>awk<br>在文件中查找并处理模式<br>awk ‘{print $1 $1}’ filename </p><p>sort<br>排序或归并文件<br>sort -d -f -u file1 </p><p>uniq<br>去掉文件中的重复行<br>uniq file1 file2 </p><p>comm<br>显示两有序文件的公共和非公共行<br>comm file1 file2 </p><p>wc<br>统计文件的字符数、词数和行数<br>wc filename </p><p>nl<br>给文件加上行号<br>nl file1 >file2 </p><p>passwd<br>修改用户密码<br>passwd </p><p>chmod<br>改变文件或目录的权限<br>chmod ug+x filename </p><p>umask<br>定义创建文件的权限掩码<br>umask 027 </p><p>chown<br>改变文件或目录的属主<br>chown newowner filename </p><p>chgrp<br>改变文件或目录的所属组<br>chgrp staff filename </p><p>xlock<br>给终端上锁<br>xlock -remote </p><p>make<br>维护可执行程序的最新版本<br>make </p><p>touch<br>更新文件的访问和修改时间<br>touch -m 05202400 filename </p><p>dbx<br>命令行界面调试工具<br>dbx a.out </p><p>xde<br>图形用户界面调试工具<br>xde a.out </p><p>ps<br>显示进程当前状态<br>ps u </p><p>kill<br>终止进程<br>kill -9 30142 </p><p>nice<br>改变待执行命令的优先级<br>nice cc -c *.c </p><p>renice<br>改变已运行进程的优先级<br>renice +20 32768 </p><p>date<br>显示系统的当前日期和时间<br>date </p><p>cal<br>显示日历<br>cal 8 1996 </p><p>time<br>统计程序的执行时间<br>time a.out </p><p>telnet<br>远程登录<br>telnet hpc.sp.net.edu.cn </p><p>rlogin<br>远程登录<br>rlogin hostname -l username </p><p>rsh<br>在远程主机执行指定命令<br>rsh f01n03 date </p><p>ftp<br>在本地主机与远程主机之间传输文件<br>ftp ftp.sp.net.edu.cn </p><p>rcp<br>在本地主机与远程主机 之间复制文件<br>rcp file1 host1:file2 </p><p>ping<br>给一个网络主机发送 回应请求<br>ping hpc.sp.net.edu.cn </p><p>mail<br>阅读和发送电子邮件<br>mail </p><p>write<br>给另一用户发送报文<br>write username pts/1 </p><p>mesg<br>允许或拒绝接收报文<br>mesg n </p><h4 id="Korn-Shell-命令"><a href="#Korn-Shell-命令" class="headerlink" title="Korn Shell 命令"></a>Korn Shell 命令</h4><p>history<br>列出最近执行过的 几条命令及编号<br>history </p><p>r<br>重复执行最近执行过的 某条命令<br>r -2 </p><p>alias<br>给某个命令定义别名<br>alias del=rm -i </p><p>unalias<br>取消对某个别名的定义<br>unalias del </p><p>uname<br>显示操作系统的有关信息<br>uname -a </p><p>clear<br>清除屏幕或窗口内容<br>clear </p><p>env<br>显示当前所有设置过的环境变量<br>env </p><p>who<br>列出当前登录的所有用户<br>who </p><p>whoami<br>显示当前正进行操作的用户名<br>whoami </p><p>tty<br>显示终端或伪终端的名称<br>tty </p><p>stty<br>显示或重置控制键定义<br>stty -a </p><p>du<br>查询磁盘使用情况<br>du -k subdir </p><p>df<br>显示文件系统的总空间和可用空间<br>df /tmp </p><p>w<br>显示当前系统活动的总信息<br>403</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;OSX-的文件系统&quot;&gt;&lt;a href=&quot;#OSX-的文件系统&quot; class=&quot;headerlink&quot; title=&quot;OSX 的文件系统&quot;&gt;&lt;/a&gt;OSX 的文件系统&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;OSX 采用的Unix文件系统，所有文件都挂在跟目录 / 
+      
+    
+    </summary>
+    
+      <category term="小技巧" scheme="http://y-ck.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    
+    
+      <category term="MAC" scheme="http://y-ck.github.io/tags/MAC/"/>
+    
+      <category term="命令" scheme="http://y-ck.github.io/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习笔记1</title>
+    <link href="http://y-ck.github.io/2017/03/21/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001/"/>
+    <id>http://y-ck.github.io/2017/03/21/技术学习笔记01/</id>
+    <published>2017-03-21T04:00:00.000Z</published>
+    <updated>2019-04-19T14:57:36.104Z</updated>
+    
+    <content type="html"><![CDATA[<p> #利用GitHub免费空间，搭建 Hexo框架博客</p><h4 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a>什么是Hexo</h4><p>  Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：</p><blockquote><p>快速、简单且功能强大的 Node.js 博客框架。<br>A fast, simple &amp; powerful blog framework, powered by Node.js.</p></blockquote><h4 id="GitHub-Pages是什么？"><a href="#GitHub-Pages是什么？" class="headerlink" title="GitHub Pages是什么？"></a>GitHub Pages是什么？</h4><p>GitHub Pages 可以被认为是用户编写的、托管在github上的静态网页。<br>GitHub Pages 生成的网站的默认域名是 username.github.io 或者 username.github.io/project-name ，但GitHub Pages 是支持自定义域名的： Custom Domain Name 。购买域名之后，可以和默认的二级域名进行绑定，教程参考： 购买域名、设置DNS。</p><h3 id="步骤开始："><a href="#步骤开始：" class="headerlink" title="步骤开始："></a>步骤开始：</h3><ol><li>Hexo 的安装</li></ol><p>由于 Hexo 是基于 Node ，安装前要先安装 Node。我的系统环境：<br>安装Hexo，要用全局安装，加-g参数。:</p><blockquote><p> npm install hexo-cli -g<br>遇到失败一般是权限问题<br>执行 sudo npm install hexo-cli -g</p></blockquote><ol start="2"><li>查看命令帮助：</li></ol><blockquote><p>1、 help ： 查看帮助信息<br>2、 init <a href>文件夹名</a> ： 创建一个hexo项目，不指定文件夹名，则在当前目录创建<br>3、 version ： 查看hexo的版本<br>4、 –config config-path ：指定配置文件，代替默认的\config.yml<br>5、 –cwd cwd-path ：自定义当前工作目录<br>5、 –debug ：调试模式，输出所有日志信息<br>6、 –safe ：安全模式，禁用所有的插件和脚本<br>7、 –silent ：无日志输出模式</p></blockquote><p>安装好后，我们就可以使用Hexo创建项目了。<br>cd 目录<br>hexo init<br>开启服务<br>hexo s<br>这时端口4000被打开了，我们能过浏览器打开地址， <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> </p><p>Hexo的默认界面，Hexo2.4+后采用的默认主题是 Landscape</p><ol start="3"><li>Hexo的配置</li></ol><p>一般主题下有一个 languages 文件夹，是语言文件<br>修改全局配置时，注意缩进，同时注意冒号后面要有一个空格。<br>主题的配置文件在 /themes/主题文件夹/_config.yml ，一般包括导航配置(menu)，内容配置(content)，评论插件，图片效果(fancybox)和边栏(sidebar)。<br>Hexo提高了大量的主题，可以在全局配置文件中更改主题：<br>1   # Extensions 扩展<br>2   ## Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="noopener">http://hexo.io/plugins/</a> 插件<br>3   ## Themes: <a href="http://hexo.io/themes/" target="_blank" rel="noopener">http://hexo.io/themes/</a> 主题<br>4   theme: 你的主题名称<br>主题的文件目录必须在 themes 目录下。 </p><h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>写文章通过 new 命令新建一篇文章：<br>1   $ hexo new <a href>layout</a> \&lt;title><br>2   //same as<br>3   hexo n<br>其中layout是可选参数，默认值为 post 。</p><p>如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，需用引号括起来。<br>Hexo提供的layout在 scaffolds 目录下，也可以在此目录下自建layout文件。新建的文件则会保存到 source/_post 目录下。</p><p>然后启动服务器，便能看到刚刚发表的文章</p><p>发表的文章会全部显示，如果文章很长，就只要显示文章的摘要就行了。在需要显示摘要的地方添加如下代码即可：<br>1   以上是摘要<br>2   \&lt;!–more–><br>3   以下是余下全文</p><p>刷新，就能够看到只显示摘要了，同时会提供 Read More 的链接：</p><p>这个文字可以更改，在主题的配置文件( themes/主题文件夹/_config.yml )中，找到 Content ：<br>1   # Content<br>2   excerpt_link: Read More #可以更改成想要显示的文字<br>3   fancybox: true<br>此外，可以修改文章的参数，打开 scaffolds/post.md ，增加类别和描述：</p><p>再新建一篇文章，就能看到增加了文章参数：</p><p>tags 和 categories 有多个，则用数组形式。<br>部署在部署之前，需要通过命令把所有的文章都做静态化处理，就是生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的：<br>1   hexo generate<br>2   //same as<br>3   hexo g</p><p>在本地目录下，会生成一个public的目录，里面包括了所有静态化的文件。<br>生成静态文件之后，如果要发布到github，还需要配置 deploy 指令。在全局的配置文件中找到 deploy ：<br>1   # Deployment<br>2   ## Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="noopener">http://hexo.io/docs/deployment.html</a><br>3   deploy:<br>4   type: git<br>5   repo: <a href="https://github.com/dwqs/dwqs.github.io.git" target="_blank" rel="noopener">https://github.com/dwqs/dwqs.github.io.git</a><br>6   branch: master<br>自动部署：<br>安装 hexo-deployer-git ：</p><blockquote><p>npm install hexo-deployer-git -S</p></blockquote><p>最后利用hexo指令发布到github：<br>  hexo d</p><p>在github上便能看到刚刚部署的静态web网站：<br>如果部署的是个人页，新建的仓库必须的 your-user-name.github.io 。</p><p>Hexo常用命令：<br>1   hexo n == hexo new<br>2   hexo g == hexo generate<br>3   hexo s == hexo server<br>4   hexo d == hexo deploy</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; #利用GitHub免费空间，搭建 Hexo框架博客&lt;/p&gt;
+&lt;h4 id=&quot;什么是Hexo&quot;&gt;&lt;a href=&quot;#什么是Hexo&quot; class=&quot;headerlink&quot; title=&quot;什么是Hexo&quot;&gt;&lt;/a&gt;什么是Hexo&lt;/h4&gt;&lt;p&gt;  Hexo 是一个简单地、轻量
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://y-ck.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Hexo" scheme="http://y-ck.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="http://y-ck.github.io/tags/Next/"/>
+    
+  </entry>
+  
+</feed>
